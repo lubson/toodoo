@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @inbox.date %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @inbox.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_inbox_path(@inbox) %> |
+<%= link_to 'Back', inboxes_path %>

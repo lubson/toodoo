@@ -1,0 +1,25 @@
+<h1>Listing inboxes</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inboxes.each do |inbox| %>
+  <tr>
+    <td><%= inbox.date %></td>
+    <td><%= inbox.content %></td>
+    <td><%= link_to 'Show', inbox %></td>
+    <td><%= link_to 'Edit', edit_inbox_path(inbox) %></td>
+    <td><%= link_to 'Destroy', inbox, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inbox', new_inbox_path %>
