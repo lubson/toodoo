@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209210028) do
+ActiveRecord::Schema.define(:version => 20111209230953) do
 
   create_table "inboxes", :force => true do |t|
-    t.datetime "date"
+    t.date     "date"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
