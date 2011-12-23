@@ -11,21 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209230953) do
+ActiveRecord::Schema.define(:version => 20111223080110) do
 
-  create_table "inboxes", :force => true do |t|
-    t.date     "date"
+  create_table "notes", :force => true do |t|
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "login"
-    t.string   "email"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 end

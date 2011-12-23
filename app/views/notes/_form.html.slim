@@ -1,0 +1,6 @@
+= form_for(@note) do |form|
+  = form.error_messages
+  p
+    = form.label :content
+    = form.text_field :content
+  = form.submit t('note.submit')
