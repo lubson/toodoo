@@ -2,7 +2,7 @@ class NotesController < ApplicationController
 
   def index
     @note  = Note.new
-    @notes = Note.all
+    @notes = Note.all.reverse
   end
 
   def create
@@ -12,7 +12,6 @@ class NotesController < ApplicationController
       redirect_to notes_path
     else
       flash[:alert] = 'Note has not been created.'
-      redirect_to notes_path
     end
   end
 end

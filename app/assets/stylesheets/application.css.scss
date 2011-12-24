@@ -5,3 +5,15 @@
  *= require_self
  *= require_tree . 
 */
+ body {
+  padding-top: 60px;
+}
+
+#new_note textarea {
+  float: left;
+}
+
+#new_note .button {
+  float: left;
+  margin-left: 10px;
+}

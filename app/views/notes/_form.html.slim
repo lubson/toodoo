@@ -1,6 +1,4 @@
-= form_for(@note) do |form|
-  = form.error_messages
-  p
-    = form.label :content
-    = form.text_field :content
-  = form.submit t('note.submit')
+= simple_form_for @note, :html => { class: 'form-stacked row' } do |form|
+  = form.error_notification
+  = form.input  :content, wrapper_tag: :span, :input_html => { class: 'span9', rows: '1' }
+  = form.button :submit,  t('note.submit'),  class: 'btn primary'
