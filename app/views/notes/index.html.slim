@@ -1,4 +1,6 @@
-ul
+div.notes
   - @notes.each do |note|
-    li
-      pre = note.content
+      div
+        p = simple_format(note.content)
+        = link_to 'Delete', note, method: :delete, class: 'btn small'
+       

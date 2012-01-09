@@ -11,22 +11,23 @@ html
     div.topbar
       div.fill
         div.container
-          = link_to 'Toodoo', '/', class: 'brand'
+          = link_to 'Toodoo', notes_path, class: 'brand'
 
     div.container-fluid
       div.sidebar
-        div.well
-          h4 = link_to 'Inbox', '/'
+        div
+          h4 = link_to 'Inbox', notes_path
           h4 Tasks
           h4 Projects
 
       div.content.well
         = render 'notes/form'
-        div
+
+        div.flash.span9
           - flash.each do |key, value|
-                    div.flash.alert-message.success
-                      = value
-          = yield
+            p.alert-message.success
+              = value
+        = yield
 
 javascript:
   $('#new_note textarea').focus();

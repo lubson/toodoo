@@ -9,6 +9,10 @@
   padding-top: 60px;
 }
 
+#new_note {
+	clear: both
+}
+
 #new_note textarea {
   float: left;
 }
@@ -20,4 +24,15 @@
 
 label {
   color: #878787;
+}
+
+.notes {
+  margin-left:20px;
+  max-width: 90%;
+  clear: both
+}
+
+.flash {
+	height: 10px;
+	margin-bottom: 30px;
 }

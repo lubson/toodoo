@@ -14,4 +14,11 @@ class NotesController < ApplicationController
       flash[:alert] = 'Note has not been created.'
     end
   end
+
+  def destroy
+    @note = Note.find(params[:id])
+    @note.destroy
+    flash[:notice] = 'Note has been removed.'
+    redirect_to notes_path
+  end
 end
