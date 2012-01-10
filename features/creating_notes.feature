@@ -3,9 +3,16 @@ Feature: Creating notes
   As a user
   I want to create them easily
 
-  Scenario: Creating a note
+  Background:
     Given I am on the homepage
-    When I fill in "Content" with "Buy some bacon and save it."
-    And I press "Add this note"
-    Then I should see "Note has been created."
-    And I should see "Buy some bacon and save it."
+
+    Scenario: Creating a note
+      When I fill in "Content" with "Home planet: LV-426"
+      And I press "Add this note"
+      Then I should see "Note has been created."
+      And I should see "Home planet: LV-426"
+
+    Scenario: Creating an empty note
+      When I fill in "Content" with ""
+      And I press "Add this note"
+      Then I should see "Note has not been created."

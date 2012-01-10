@@ -25,9 +25,8 @@ html
 
         div.flash.span9
           - flash.each do |key, value|
-            p.alert-message.success
+            p.alert-message class=alert_message_to_flash(key)
               = value
-        
         = yield
 
 javascript:
