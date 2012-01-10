@@ -1,6 +1,6 @@
 div.notes
   - @notes.each do |note|
       div
-        p = simple_format(note.content)
         = link_to 'Delete', note, method: :delete, class: 'btn small'
+        p = simple_format(note.content)
        

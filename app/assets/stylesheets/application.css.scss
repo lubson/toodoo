@@ -7,19 +7,18 @@
 */
  body {
   padding-top: 60px;
+  background:  #F3F1EC;
 }
 
 #new_note {
-	clear: both
-}
-
-#new_note textarea {
-  float: left;
-}
-
-#new_note .button {
-  float: left;
-  margin-left: 10px;
+  margin-bottom: 0px;
+  textarea {
+    float: left;
+  }
+  .button {
+    float: left;
+    margin-left: 10px;
+  }
 }
 
 label {
@@ -28,11 +27,29 @@ label {
 
 .notes {
   margin-left:20px;
-  max-width: 90%;
-  clear: both
+  max-width: 95%;
+  clear: both;
+  div {
+  	margin-bottom: 25px;
+  	position:relative;
+    p {
+        width:80%; 
+        font-size: 14px;
+    }
+    a {
+    	position:absolute;
+    	right: 25px
+    }
+  }
 }
 
 .flash {
-	height: 10px;
-	margin-bottom: 30px;
+	height: 30px;
+	margin:  5px 0px 10px 0px;
+}
+
+.well {
+	padding-top:0px;
+	padding-right:0px;
+	background: #FFF0DB;
 }
