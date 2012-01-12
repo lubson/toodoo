@@ -12,6 +12,7 @@ group :assets do
   gem 'simple_form'
   gem 'twitter-bootstrap-rails'
   gem 'slim'
+  gem 'best_in_place'
 end
 
 group :test, :development do
@@ -23,4 +24,5 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl'
+  gem 'launchy'
 end

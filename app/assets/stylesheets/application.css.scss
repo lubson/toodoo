@@ -36,10 +36,23 @@ label {
         width:80%; 
         font-size: 14px;
     }
-    a {
+    .delete {
     	position:absolute;
-    	right: 25px
+    	right: 55px;
+      display: block;
+      width:18px;
+      height:18px;
+      background-image: url("/assets/delete.png");
+      background-size :100%;
+      background-repeat: no-repeat;
+      font-size:0px
     }
+    .edit,.save {
+      position:absolute;
+      right: 20px;
+      text-decoration: underline;
+    }
+    .save {display:none;}
   }
 }
 
@@ -51,5 +64,6 @@ label {
 .well {
 	padding-top:0px;
 	padding-right:0px;
-	background: #FFF0DB;
+	background: #FDFFD1; /*#FFF0DB*/
 }
+

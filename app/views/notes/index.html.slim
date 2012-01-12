@@ -1,6 +1,17 @@
 div.notes
   - @notes.each do |note|
       div
-        = link_to 'Delete', note, method: :delete, class: 'btn small'
-        p = simple_format(note.content)
-       
+        = link_to 'Delete', note, method: :delete, class: 'delete'
+        = link_to 'Edit', '#' , id: "note-#{note.id}", class: 'edit'
+        = link_to 'Save', '#' , id: "save-note-#{note.id}", class: 'save'
+        p = best_in_place note, :content, type: :textarea, activator: "#note-#{note.id}"
+
+javascript:
+  $('.edit').click(function(){
+  	$(this).hide();
+  	$('#save-'+$(this).attr("id")).show();
+  });
+  $('.save').click(function(){
+  	$(this).hide();
+  	$("#"+$(this).attr("id").replace("save-","")).show();
+  });

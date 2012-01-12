@@ -22,3 +22,7 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
     assert page.has_content?(text)
   end
 end
+
+When /^I edit "([^"]*)" with "([^"]*)"$/ do |field, value|
+  save_and_open_page
+end

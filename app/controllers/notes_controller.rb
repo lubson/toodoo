@@ -16,6 +16,18 @@ class NotesController < ApplicationController
     end
   end
 
+  def update
+    @note = Note.find(params[:id])
+    respond_to do |format|
+      if @note.update_attributes(params[:note])
+        format.html { redirect_to(@note, :notice => 'User was successfully updated.') }
+        format.json { respond_with_bip(@note) }
+      else
+        format.json { respond_with_bip(@note) }
+      end
+    end
+  end
+
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
