@@ -1,0 +1,4 @@
+$('div.notes').prepend("<%= escape_javascript(render @note) %>");
+$('div#<%= dom_id(@note) %>').effect('highlight', 4000);
+$('#new_note textarea').val('');
+$('#new_note textarea').focus();

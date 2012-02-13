@@ -7,13 +7,18 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
-    if @note.save
-      flash[:notice] = "Note has been created."
-      redirect_to notes_path
-    else
-      flash[:alert] = 'Note has not been created.'
-      redirect_to notes_path
-    end
+    respond_to do |format|  
+      if @note.save
+          flash[:notice] = "Note has been created."
+          format.html { redirect_to notes_path }
+          format.json { head :ok }
+      else
+        flash[:alert] = 'Note has not been created.'
+          format.html { redirect_to notes_path }
+          format.json { head :ok }
+      end
+      format.js
+    end 
   end
 
   def update
@@ -31,7 +36,7 @@ class NotesController < ApplicationController
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-    flash[:notice] = 'Note has been removed.'
+    gflash notice: 'Note has been removed.'
     respond_to do |format|
       format.html { redirect_to notes_path }
       format.json { head :ok }

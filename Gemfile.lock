@@ -31,9 +31,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.6)
     arel (2.2.1)
-    best_in_place (1.0.4)
-      jquery-rails
-      rails (~> 3.1.0)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -74,6 +71,7 @@ GEM
     ffi (1.0.11)
     gherkin (2.7.1)
       json (>= 1.4.6)
+    gritter (1.0.1)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -186,13 +184,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  best_in_place
   capybara
   coffee-rails (~> 3.1.1)
   cucumber-rails
   database_cleaner
   dynamic_form
   factory_girl
+  gritter (= 1.0.1)
   jquery-rails
   launchy
   rails (= 3.1.3)

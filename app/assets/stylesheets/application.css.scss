@@ -4,7 +4,16 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require gritter
 */
+
+body #gritter-notice-wrapper {
+  top: auto;
+  right: auto;
+  bottom: 20px;
+  left: 20px;
+}
+
  body {
   padding-top: 60px;
   background:  #F3F1EC;
@@ -64,6 +73,6 @@ label {
 .well {
 	padding-top:0px;
 	padding-right:0px;
-	background: #FDFFD1; /*#FFF0DB*/
+	background: white; /*#FDFFD1 #FFF0DB*/
 }
 

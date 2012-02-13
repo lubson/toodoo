@@ -12,6 +12,7 @@ group :assets do
   gem 'simple_form'
   gem 'twitter-bootstrap-rails'
   gem 'slim'
+  gem 'gritter', '1.0.1'
 end
 
 group :test, :development do

@@ -1,6 +1,2 @@
 div.notes
-  - @notes.each do |note|
-    = div_for(note) do
-      = link_to 'Delete', note, method: :delete, remote: true, class: 'delete'
-      = link_to 'Edit', '#' , id: "", class: 'edit'
-      p = simple_format(note.content)
+  = render @notes
