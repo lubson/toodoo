@@ -12,7 +12,6 @@ group :assets do
   gem 'simple_form'
   gem 'twitter-bootstrap-rails'
   gem 'slim'
-  gem 'best_in_place'
 end
 
 group :test, :development do

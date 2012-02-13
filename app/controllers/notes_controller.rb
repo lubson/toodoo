@@ -32,6 +32,10 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
     flash[:notice] = 'Note has been removed.'
-    redirect_to notes_path
+    respond_to do |format|
+      format.html { redirect_to notes_path }
+      format.json { head :ok }
+      format.js
+    end
   end
 end
