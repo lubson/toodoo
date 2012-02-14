@@ -15,10 +15,9 @@ html
 
     div.container-fluid
       div.sidebar
-        div
-          h4 = link_to 'Inbox', notes_path
-          h4 Tasks
-          h4 Projects
+        h4 = link_to 'Inbox', notes_path
+        h4 Tasks
+        h4 Projects
 
       div.content.well
         = render 'notes/form'

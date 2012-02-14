@@ -9,10 +9,9 @@ Feature: Creating notes
     Scenario: Creating a note
       When I fill in "Content" with "Home planet: LV-426"
       And I press "Add this note"
-      Then I should see "Note has been created."
-      And I should see "Home planet: LV-426"
+      Then I should see "Home planet: LV-426"
 
     Scenario: Creating an empty note
       When I fill in "Content" with ""
       And I press "Add this note"
-      Then I should see "Note has not been created."
+      Then I should not see "Edit"

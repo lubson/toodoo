@@ -7,4 +7,4 @@ Feature:
     Given there is a note with content "Home planet: LV-426"
     And I am on the homepage
     When I follow "Delete"
-    Then I should see "Note has been removed."
+    Then I should not see "Home planet: LV-426"
