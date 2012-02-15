@@ -16,7 +16,7 @@ Given %{I sign in as "$email" with "$password"} do |email, password|
   step %{I fill in "Email" with "#{email}" in context of "sign-in"}
   step %{I fill in "Password" with "#{password}" in context of "sign-in"}
   step %{I press "Sign in"}
-  step %{I should see "Signed in successfully."}
+  step %{I should see "signed in as #{email}"}
 end
 
 Given %{I am signed in as "$email" with "$password" and I sign out} do |email, password|

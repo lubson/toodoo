@@ -13,9 +13,9 @@ html
           = link_to 'Toodoo', notes_path, class: 'brand'
           div.nav-collapse
             p.pull-right.navbar-text 
-              'signed in as 
+              | signed in as 
               a href='#' = current_user.email
-              '
+    
     div.container-fluid
       div.sidebar
         h4 = link_to 'Inbox', notes_path
