@@ -4,7 +4,7 @@ Given %{I sign up as "$email" with "$password"} do |email, password|
   step %{I fill in "Password" with "#{password}" in context of "sign-up"}
   step %{I fill in "Password confirmation" with "#{password}" in context of "sign-up"}
   step %{I press "Sign up"}
-  step %{I should see "Welcome! You have signed up successfully."}
+  step %{I should see "signed in as #{email}"}
 end
 
 Given %{I sign in as "$email" with "$password"} do |email, password|
