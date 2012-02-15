@@ -26,7 +26,7 @@ Given %{I am signed in as "$email" with "$password" and I sign out} do |email, p
   })
   step %{I am signed in as "#{email}" with "#{password}"}
   step %{I follow "Sign out"}
-  step %{I should see "Signed out successfully."}
+  step %{I should see "Welcome to Toodoo"}
 end
  
 Given /^there are the following users:$/ do |table|
@@ -40,5 +40,5 @@ Given /^I am signed in as "([^\"]*)" with "([^\"]*)"$/ do |email, password|
   find_by_id('sign-in').fill_in 'Email', with: email
   find_by_id('sign-in').fill_in 'Password', with: password
   click_button 'Sign in'
-  page.should have_content('Signed in successfully.')
+  page.should have_content("signed in as #{email}")
 end

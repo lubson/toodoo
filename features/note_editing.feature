@@ -9,5 +9,4 @@ Feature:
     When I follow "Edit"
     And I edit "Content" with "Home planet of xenomorphs: LV-426"
     And I follow "Save"
-    And I follow "Inbox"
     Then I should see "Home planet of xenomorphs: LV-426"
