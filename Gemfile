@@ -27,4 +27,5 @@ end
 group :test, :development do
   gem 'rspec',       '2.7.0'
   gem 'rspec-rails', '2.7.0'
+  gem 'accept_values_for', '0.4.3'
 end
