@@ -1,0 +1,4 @@
+$('input.btn').click(function(){
+  $(this).parent().hide();
+  $('div#<%= dom_id(@note) %>').effect('highlight', 4000);
+});

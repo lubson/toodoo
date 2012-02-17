@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
-
+  
+  respond_to :html, :js
+  
   def index
     @note  = Note.new
     @notes = Note.all.reverse
@@ -7,40 +9,29 @@ class NotesController < ApplicationController
 
   def create
     @note = Note.new(params[:note])
-    respond_to do |format|  
-      if @note.save
-          flash[:notice] = "Note has been created."
-          format.html { redirect_to notes_path }
-          format.json { head :ok }
-      else
-        flash[:alert] = 'Note has not been created.'
-          format.html { redirect_to notes_path }
-          format.json { head :ok }
-      end
-      format.js
-    end 
+    @note.save
+ 
+    respond_with @note
+  end
+
+  def edit
+    @note = Note.find(params[:id])
+
+    respond_with @note
   end
 
   def update
     @note = Note.find(params[:id])
-    respond_to do |format|
-      if @note.update_attributes(params[:note])
-        format.html { redirect_to(@note, :notice => 'User was successfully updated.') }
-        format.json { respond_with_bip(@note) }
-      else
-        format.json { respond_with_bip(@note) }
-      end
-    end
+    @note.update_attributes(params[:note])
+
+    respond_with @note
   end
 
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
     gflash notice: 'Note has been removed.'
-    respond_to do |format|
-      format.html { redirect_to notes_path }
-      format.json { head :ok }
-      format.js
-    end
+    
+    respond_with @note
   end
 end

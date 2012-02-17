@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20120214232320) do
   create_table "notes", :force => true do |t|
     t.text     "content"
     t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20120214232320) do
     t.string   "last_sign_in_ip"
     t.string   "password"
     t.string   "password_confirmation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
