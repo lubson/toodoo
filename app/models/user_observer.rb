@@ -1,6 +1,7 @@
 class UserObserver < ActiveRecord::Observer
 
   def after_create(user)
-    user.projects.create(name: 'default', status: 'default')
+    project = user.projects.create(name: 'default')
+    project.status = 'default'
   end
 end
