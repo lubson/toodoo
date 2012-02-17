@@ -1,15 +1,13 @@
 class NotesController < ApplicationController
-  
-  respond_to :html, :js
-  
+    
   def index
-    @note  = Note.new
     @notes = Note.all.reverse
+
+    respond_with @notes
   end
 
   def create
-    @note = Note.new(params[:note])
-    @note.save
+    @note = Note.create(params[:note])
  
     respond_with @note
   end

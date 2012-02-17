@@ -2,6 +2,6 @@
   = form.error_notification
   = form.input  :name, label: 'Name of the new project', input_html: { class: 'span7', rows: '1' }
   /= form.input :deadline, label: 'Deadline'
-  = form.input :deadline, as: :string, input_html: { :class => 'small', 'data-datepicker' => 'datepicker'}
+  = form.input :deadline, as: :string, input_html: { class: 'small', 'data-datepicker' => 'datepicker'}
   = form.input  :note, label: 'Note', input_html: { class: 'span7', rows: '4' }
   = form.button :submit,  'Create new project',  class: 'btn primary'
