@@ -18,11 +18,7 @@ html
               | signed in as 
               a href='#' = current_user.email
     
-    div.container-fluid
-      div.sidebar
-        h4 = link_to 'Inbox', notes_path
-        h4 Tasks
-        h4 Projects
+    = render 'shared/menu'
 
       div.content.well
         = render 'notes/form'
