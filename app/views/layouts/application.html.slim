@@ -6,23 +6,34 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    
-    div.topbar
-      div.fill
-        div.container
+    /! HEADER
+    div.navbar.navbar-fixed-top
+      div.navbar-inner
+        div.container-fluid
           = link_to 'Toodoo', notes_path, class: 'brand'
           div.nav-collapse
-            = link_to 'Sign out', destroy_user_session_path,\
-                     method: :delete, class: 'pull-right navbar-text sign-out'
             p.pull-right.navbar-text 
               | signed in as 
               a href='#' = current_user.email
+              = link_to 'Sign out', destroy_user_session_path,\
+                     method: :delete, class: 'pull-right navbar-text sign-out'
+              
+    /! SIDEBAR
+    div.container-fluid
+      div.row-fluid          
+        div.span2
+          div.sidebar-nav
+            ul.nav.nav-list
+              li = link_to 'Inbox', notes_path
+              li Tasks
+              li = link_to 'Projects', projects_path
+              br
+              li = link_to 'New project', new_project_path
     
-    = render 'shared/menu'
-
-      div.content.well
-        = render 'notes/form'
-        = yield
+        div.span10
+          div.hero-unit.shadow
+            = render 'notes/form'
+            = yield
 
 javascript:
   $('#new_note textarea').focus();

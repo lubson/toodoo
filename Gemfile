@@ -13,7 +13,6 @@ group :assets do
   gem 'simple_form',    '1.5.2'
   gem 'bootstrap-sass', '2.0.0'
   gem 'gritter',        '1.0.1'
-  gem 'best_in_place',  '1.0.6'
 end
 
 group :test do

@@ -72,7 +72,7 @@ label {
 	margin:  5px 0px 10px 0px;
 }
 
-.well {
+.shadow {
 	padding-top:0px;
 	padding-right:0px;
 	background: white; /*#FDFFD1 #FFF0DB*/
@@ -87,3 +87,12 @@ label {
   color: #999999;
 }
 
+.hero-unit{
+  padding-top:7px
+}
+
+.project-form{
+  margin: 10px 20px 10px 0px;
+  border: solid;
+  padding: 5px 10px 20px 10px
+}
