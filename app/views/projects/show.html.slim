@@ -1,9 +1,10 @@
 div.task
   h3 Active tasks
 
-  h3 Completed task
+  h4 Completed task
 
 div.project-info
   h2 = @project.name
+  = link_to 'Edit', edit_project_path(@project)
   date = @project.created_at
   p = simple_format(@project.note)

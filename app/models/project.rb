@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :user
-  
+  has_many   :tasks
 
   before_create :init
 
