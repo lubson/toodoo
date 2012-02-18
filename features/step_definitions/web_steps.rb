@@ -2,13 +2,6 @@ Given /^I am on the homepage$/ do
   visit '/'
 end
 
-Given /^I am logged in as an "([^"]*)"$/ do |role|
-  user = Factory(:user);
-
-  step %{I sign in as "user@mail.com" with "password"}
-end
-
-
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in field, with: value
 end
