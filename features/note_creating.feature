@@ -1,4 +1,4 @@
-feaFeature: Creating notes
+Feature: Creating notes
   In order to have notes
   As a user
   I want to create them easily

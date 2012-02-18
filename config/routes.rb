@@ -4,7 +4,9 @@ Toodoo::Application.routes.draw do
       get 'users', to: 'notes#index', as: :user_root
   end
   
-  resources :projects 
+  resources :projects do
+    resources :tasks
+  end
   match 'projects/*status' => 'projects#index'
 
   resources :notes
