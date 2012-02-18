@@ -30,17 +30,17 @@ class ProjectsController < ApplicationController
     respond_with @project
   end
 
-  def save
+  def update
     @project = Project.find(params[:id])
     @project.update_attributes(params[:project])
 
     respond_with @project
   end
 
-  def delete
+  def destroy
     @project = Project.find(params[:id])
     @project.destroy
 
-    respond_with @project
+    respond_with @project, location: projects_path(status: 'active')
   end
 end
