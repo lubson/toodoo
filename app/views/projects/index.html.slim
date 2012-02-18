@@ -1,8 +1,9 @@
 ul.projects-types
-  li Active
-  li Completed
-  li Postponed
+  li = link_to 'Active', projects_path(status: 'active')
+  li = link_to 'Posponed', projects_path(status: 'postponed')
+  li = link_to 'Completed', projects_path(status: 'completed')
 
 div
   h3 Active projects
   = render @projects
+    

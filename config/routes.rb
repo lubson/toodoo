@@ -5,7 +5,8 @@ Toodoo::Application.routes.draw do
   end
   
   resources :projects
-     #get 'projects', to: 'projects#index', as: 
+  match 'projects/*status' => 'projects#index'
+
   resources :notes
 
   root to: 'home#index'

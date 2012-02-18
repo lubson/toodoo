@@ -1,16 +1,17 @@
 class Project < ActiveRecord::Base
   belongs_to :user
+  
 
-  after_create :default_value
+  before_create :init
 
-  scope   :active, where(status: 'active')
-  scope   :completed, where(status: 'completed')
-  scope   :later, where(status: 'post_poned')
-  scope   :default, where(status: 'default').first()
+  scope   :default, where(status: 'default').first
   scope   :recent, order('created_at desc')
 
-  def default_value
-    self.status = 'active'
+  scope :by_status, -> status do
+    where(status: status)
   end
-  
+
+  def init
+    self.status || 'active'
+  end
 end
