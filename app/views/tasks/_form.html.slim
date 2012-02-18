@@ -1,0 +1,6 @@
+= simple_form_for [@project, @task] do |form|
+  = form.error_notification
+  = form.input  :name
+  = form.input  :status, collection: ['Today', 'Tommorow', 'This week', 'Next week', 'Later', 'Pick date'], default: 'Today'
+  = form.input  :due, as: :string, input_html: { class: 'small hidden', 'data-datepicker' => 'datepicker'}, label: false
+  = form.button :submit, "Create task"
