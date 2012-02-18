@@ -2,8 +2,8 @@ h2 Sign in
 div#sign-in
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |form|
     div.inputs
-      = form.input :email, required: false, autofocus: true
-      = form.input :password, required: false
+      = form.input :email, required: true, autofocus: true, input_html: { id: 'signin_email' }
+      = form.input :password, required: true, input_html: { id: 'signin_password' }
       
     div.actions
       = form.button :submit, 'Sign in'

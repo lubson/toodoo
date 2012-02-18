@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20120217195545) do
   create_table "notes", :force => true do |t|
     t.text     "content"
     t.date     "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|

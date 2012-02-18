@@ -2,8 +2,14 @@ Given /^I am on the homepage$/ do
   visit '/'
 end
 
+Given /^I am logged in as an "([^"]*)"$/ do |role|
+  user = Factory(:user);
+
+  step %{I sign in as "user@mail.com" with "password"}
+end
+
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  field = 'note_content' if field == 'Content'
   fill_in field, with: value
 end
 
@@ -30,5 +36,3 @@ end
 Then /^I should not see "([^"]*)"$/ do |text|
   page.should_not(have_content(text), "Expected to see the #{ text.inspect } message, but did not.")
 end
-
-

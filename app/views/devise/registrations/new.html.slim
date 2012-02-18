@@ -3,9 +3,9 @@ div#sign-up
   = simple_form_for resource, as: resource_name, url: registration_path(resource) do |form|
     = form.error_notification
     div.inputs
-      = form.input :email, required: true, autofocus: true
-      = form.input :password, required: true
-      = form.input :password_confirmation, required: true
+      = form.input :email, required: true, input_html: { id: 'signup_email' }
+      = form.input :password, required: true, input_html: { id: 'signup_password' }
+      = form.input :password_confirmation, required: true, input_html: { id: 'signup_password_confirmation' }
     div.actions
       = form.button :submit, 'Sign up'
 

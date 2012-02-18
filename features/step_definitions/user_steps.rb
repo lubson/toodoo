@@ -1,3 +1,28 @@
+Given /^there are the following users:$/ do |table|
+  table.hashes.each do |attributes|
+    @user = User.create!(attributes)
+  end
+end
+
+Given /^I am signed in as them$/ do
+  steps(%Q{
+    Given I am on the homepage
+    When I fill in "signin_email" with "#{@user.email}"
+    And I fill in "signin_password" with "toodoo"
+    And I press "Sign in"
+    Then I should see "Signed in as #{@user.email}"
+  })
+end
+
+
+Given /^I am signed in as "([^\"]*)" with "([^\"]*)"$/ do |email, password|
+  visit '/'
+  find_by_id('sign-in').fill_in 'Email', with: email
+  find_by_id('sign-in').fill_in 'Password', with: password
+  click_button 'Sign in'
+  page.should have_content("signed in as #{email}")
+end
+
 Given %{I sign up as "$email" with "$password"} do |email, password|
   step %{I am on the homepage}
   step %{I fill in "Email" with "#{email}" in context of "sign-up"}
@@ -27,18 +52,4 @@ Given %{I am signed in as "$email" with "$password" and I sign out} do |email, p
   step %{I am signed in as "#{email}" with "#{password}"}
   step %{I follow "Sign out"}
   step %{I should see "Welcome to Toodoo"}
-end
- 
-Given /^there are the following users:$/ do |table|
-  table.hashes.each do |attributes|
-    User.create!(attributes)
-  end
-end
-
-Given /^I am signed in as "([^\"]*)" with "([^\"]*)"$/ do |email, password|
-  visit '/'
-  find_by_id('sign-in').fill_in 'Email', with: email
-  find_by_id('sign-in').fill_in 'Password', with: password
-  click_button 'Sign in'
-  page.should have_content("signed in as #{email}")
 end

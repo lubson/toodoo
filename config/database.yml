@@ -3,24 +3,24 @@ development:
   encoding: utf8
   database: toodoo_development
   pool: 5
-  username: lubson
-  password: ratata
+  username: mar1221
+  password: 120586
 
 test: &test
   adapter: postgresql
   encoding: utf8
   database: toodoo_test
   pool: 5
-  username: lubson
-  password: ratat
+  username: mar1221
+  password: 120586
 
 production:
   adapter: postgresql
   encoding: utf8
   database: toodoo_production
   pool: 5
-  username: lubson
-  password: ratat
+  username: mar120586
+  password: 120586
 
 cucumber:
   <<: *test
