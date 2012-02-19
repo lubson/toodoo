@@ -12,6 +12,6 @@ class Project < ActiveRecord::Base
   end
 
   def init
-    self.status = 'active'
+    self.status =  status || 'active'
   end
 end

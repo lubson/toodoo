@@ -1,13 +1,13 @@
 class NotesController < ApplicationController
     
   def index
-    @notes = Note.all.reverse
+    @notes = current_user.notes
 
     respond_with @notes
   end
 
   def create
-    @note = Note.create(params[:note])
+    @note = current_user.notes.create(params[:note])
  
     respond_with @note
   end

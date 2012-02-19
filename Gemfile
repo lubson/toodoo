@@ -21,9 +21,9 @@ group :test do
   gem 'database_cleaner',   '0.7.1'
   gem 'factory_girl_rails', '1.6.0'
   gem 'launchy',            '2.0.5'
+  gem 'accept_values_for',  '0.4.3'
 end
 
 group :test, :development do
   gem 'rspec-rails',       '2.8.1'
-  gem 'accept_values_for', '0.4.3'
 end
