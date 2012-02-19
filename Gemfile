@@ -4,13 +4,13 @@ gem 'rails',        '3.2.1'
 gem 'pg',           '0.13.1'
 gem 'devise',       '2.0.4'
 gem 'slim',         '1.1.0'
+gem 'simple_form',  '1.5.2'
 
 group :assets do
   gem 'jquery-rails',   '2.0.0'
   gem 'sass-rails',     '3.2.4'
   gem 'coffee-rails',   '3.2.2'
   gem 'uglifier',       '1.2.3'
-  gem 'simple_form',    '1.5.2'
   gem 'bootstrap-sass', '2.0.0'
   gem 'gritter',        '1.0.1'
 end
