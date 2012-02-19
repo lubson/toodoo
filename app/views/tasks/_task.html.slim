@@ -1,7 +1,11 @@
 = div_for(task) do
   li
-    = link_to 'done'
-    time = task.due 
+    = link_to 'link', class: 'check' do
+      input type="checkbox"
+    = link_to 'destroy', class: 'delete' do
+      i.icon-trash
+    = link_to 'edit', class: 'edit' do
+      i.icon-edit
+    time = task.due
     p = task.name
-    = link_to 'Edit', edit_project_task_path(task)
-    = link_to 'Delete', edit_project_task_path(task), method: :delete
+    

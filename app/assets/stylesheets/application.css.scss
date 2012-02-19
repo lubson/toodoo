@@ -143,3 +143,18 @@ label {
     line-height:normal;
   }
 }
+
+.active-tasks {
+  list-style-type: none;
+  .check {
+    float:left;
+  }
+  p {
+    font-size:small;
+    line-height:normal;
+    padding-top:3px;
+  }
+  .edit,.delete {
+    float:right;
+  }
+}
