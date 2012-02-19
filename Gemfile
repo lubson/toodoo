@@ -24,6 +24,10 @@ group :test do
   gem 'accept_values_for',  '0.4.3'
 end
 
+group :development do
+  gem 'heroku', '2.20.1'
+end
+
 group :test, :development do
-  gem 'rspec-rails',       '2.8.1'
+  gem 'rspec-rails', '2.8.1'
 end
