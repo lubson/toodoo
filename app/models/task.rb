@@ -1,16 +1,12 @@
 class Task < ActiveRecord::Base
   belongs_to :project
 
-  before_create :init_status
-
-  scope   :recent, order('due asc')
-
-  scope :by_status, -> status do
-    where(status: status)
+  after_initialize do |active|
+    self.status = 'active'
   end
 
-  def init_status
-    
-    self.status = 'active'
+  scope :recent, order('due asc')
+  scope :by_status, -> status do
+    where(status: status)
   end
 end
