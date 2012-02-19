@@ -8,5 +8,4 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
-//= require gritter
 //= require bootstrap-datepicker
