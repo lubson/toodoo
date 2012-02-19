@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :project
 
-  before_create :init
+  before_create :init_status
 
   scope   :recent, order('due asc')
 
@@ -9,7 +9,8 @@ class Task < ActiveRecord::Base
     where(status: status)
   end
 
-  def init
-      self.status = 'active'
+  def init_status
+    
+    self.status = 'active'
   end
 end

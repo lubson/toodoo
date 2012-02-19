@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   respond_to :html, :js
+
+  before_filter :authenticate_user!
  
   layout :layout_by_resource
   

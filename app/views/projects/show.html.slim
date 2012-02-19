@@ -8,14 +8,20 @@ div.row-fluid
 
     h5 Completed task
 
-  div.project-info.span4
+  div.project-info.span5
     h3 = @project.name
-    ul.project-actions
+    ul.span12.project-actions
       li = link_to 'Edit', edit_project_path(@project)
       li Complete
       li Postpone
-      li = link_to 'Delete', @project, method: :delete, class: 'delete'
+      li = link_to 'Delete', @project, method: :delete, class: 'delete', confirm: 'Tasks in this project will be also deleted!'
+    - if @project.deadline
+      time
+        label Deadline
+        span.label class="#{deadline_format(@project.deadline)}" 
+          i = @project.deadline
+        p = simple_format(@project.note)
+    label Created at
     date = @project.created_at
-    p = simple_format(@project.note)
     
 

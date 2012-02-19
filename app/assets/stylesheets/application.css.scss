@@ -123,3 +123,23 @@ label {
   display: block;
   float: right;
 }
+
+.project-actions {
+  list-style-type:none;
+  float:right;
+  li {
+    float: left;
+    margin-right: 8px;
+  }
+}
+
+.project-info {
+  label {
+    float:left;
+    margin-right: 5px
+  }
+  p {
+    font-size:small;
+    line-height:normal;
+  }
+}

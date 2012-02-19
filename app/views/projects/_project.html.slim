@@ -3,8 +3,8 @@
   h3 = link_to project.name, project_path(project)
   time 
     - if project.deadline
-      i
-        span.label class="#{deadline_format(project.deadline)}" = project.deadline
+      span.label class="#{deadline_format(project.deadline)}" 
+        i = project.deadline
   div.progress.progress-info.progress-striped
     div.bar style="width: #{project_completness(project)}%;"
 

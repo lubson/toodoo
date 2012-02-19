@@ -28,7 +28,6 @@ class NotesController < ApplicationController
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-    gflash notice: 'Note has been removed.'
     
     respond_with @note
   end
