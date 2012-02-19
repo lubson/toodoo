@@ -1,5 +1,7 @@
 = div_for(task) do
   li
+    = link_to 'done'
     time = task.due 
     p = task.name
-    /= link_to 'Edit' edit_project_task_path(task)
+    = link_to 'Edit', edit_project_task_path(task)
+    = link_to 'Delete', edit_project_task_path(task), method: :delete

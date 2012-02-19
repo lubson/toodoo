@@ -1,7 +1,10 @@
 = div_for project, class: 'well' do
+  p.label.label-info.number-of-active-tasks.span0 = project.tasks.by_status('active').count
   h3 = link_to project.name, project_path(project)
   time 
-    i = project.deadline
+    - if project.deadline
+      i
+        span.label class="#{deadline_format(project.deadline)}" = project.deadline
   div.progress.progress-info.progress-striped
-    div.bar style='width: 20%;'
+    div.bar style="width: #{project_completness(project)}%;"
 

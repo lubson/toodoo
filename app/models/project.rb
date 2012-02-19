@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   before_create :init
 
   scope   :default, where(status: 'default').first
-  scope   :recent, order('created_at desc')
+  scope   :recent, order('deadline asc')
 
   scope :by_status, -> status do
     where(status: status)
