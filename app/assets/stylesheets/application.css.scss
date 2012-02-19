@@ -105,3 +105,16 @@ label {
    pointer-events: none;
    cursor: default;
 }
+
+.projects-menu {
+  margin: 5px 0px 10px 0px;
+  list-style-type: none;
+  li {
+    float:left;
+    text-align:center;
+  }
+}
+
+.progress {
+  margin-top: 8px;
+}

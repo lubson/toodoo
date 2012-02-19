@@ -1,6 +1,6 @@
-= simple_form_for (@note || Note.new) , remote: true, html: { class: 'row form', novalidate: 'novalidate' } do |form|
+= simple_form_for (@note || Note.new) , remote: true, html: { class: 'row note-form', novalidate: 'novalidate' } do |form|
   = form.error_notification
   = form.input  :content, required: false, label: t('note.content'), \
-                wrapper_tag: :span, input_html: { class: 'span9', rows: '2' }
+                wrapper_tag: :span, input_html: { class: 'span9', rows: '1' }
   
-  = form.button :submit,  t('note.submit'),  class: 'btn btn-primary btn-large'
+  = form.button :submit,  t('note.submit'),  class: 'btn btn-primary'

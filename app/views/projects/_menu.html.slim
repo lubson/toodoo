@@ -1,0 +1,4 @@
+ul.projects-menu.span10
+  li.span3 = link_to 'Active', projects_path(status: 'active')
+  li.span3 = link_to 'Posponed', projects_path(status: 'postponed')
+  li.span3 = link_to 'Completed', projects_path(status: 'completed')

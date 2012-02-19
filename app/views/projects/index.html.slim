@@ -1,9 +1,7 @@
-ul.projects-types
-  li = link_to 'Active', projects_path(status: 'active')
-  li = link_to 'Posponed', projects_path(status: 'postponed')
-  li = link_to 'Completed', projects_path(status: 'completed')
+= render 'menu'
 
-div
-  h3 Active projects
-  = render @projects
+div.row-fluid
+  div.span9
+    h3 Active projects
+    = render @projects
     

@@ -39,7 +39,6 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
-    @project.destroy
 
     respond_with @project, location: projects_path(status: 'active')
   end

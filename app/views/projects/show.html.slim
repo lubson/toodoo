@@ -1,15 +1,21 @@
-div.task
-  h3 Active tasks
-  ul.active-tasks
-    = render @project.tasks
-  div = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task' 
+= render 'menu'
+div.row-fluid
+  div.task.span6
+    h4 Active tasks
+    ul.active-tasks
+      = render @project.tasks
+    div = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task' 
 
-  h4 Completed task
+    h5 Completed task
 
-div.project-info
-  h2 = @project.name
-  = link_to 'Edit', edit_project_path(@project)
-  date = @project.created_at
-  p = simple_format(@project.note)
-  = link_to 'Delete', @project, method: :delete
+  div.project-info.span4
+    h3 = @project.name
+    ul.project-actions
+      li = link_to 'Edit', edit_project_path(@project)
+      li Complete
+      li Postpone
+      li = link_to 'Delete', @project, method: :delete, class: 'delete'
+    date = @project.created_at
+    p = simple_format(@project.note)
+    
 

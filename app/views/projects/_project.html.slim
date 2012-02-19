@@ -1,3 +1,7 @@
-= div_for(project) do
+= div_for project, class: 'well' do
   h3 = link_to project.name, project_path(project)
-  time = project.deadline
+  time 
+    i = project.deadline
+  div.progress.progress-info.progress-striped
+    div.bar style='width: 20%;'
+
