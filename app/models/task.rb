@@ -6,5 +6,5 @@ class Task < ActiveRecord::Base
   end
 
   scope :recent, order('due asc')
-  scope :by_status, -> status do { where(status: status) }
+  scope :by_status, -> status { where(status: status) }
 end
