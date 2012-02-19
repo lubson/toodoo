@@ -1,6 +1,9 @@
-= simple_form_for [@project, @task] do |form|
+= simple_form_for [@project, @task], remote: true, html: { class: 'task-form' } do |form|
   = form.error_notification
-  = form.input  :name
-  = form.input  :status, collection: ['Today', 'Tommorow', 'This week', 'Next week', 'Later', 'Pick date'], default: 'Today'
-  = form.input  :due, as: :string, input_html: { class: 'small hidden', 'data-datepicker' => 'datepicker'}, label: false
+  = form.input  :name, input_html: { rows: '3' }
+  = form.input  :status, default: 'today',\ 
+      collection: { 'Today' => 'today', 'Tomorrow' => 'tomorrow', 'This week' => 'this_week',\
+                    'Next week' => 'next_week', 'Later' => 'later', 'Pick date' => 'pick_date' }
+  = form.input  :due, as: :string, label: false,\
+      input_html: { class: 'small hidden', 'data-datepicker' => 'datepicker' }
   = form.button :submit, "Create task"

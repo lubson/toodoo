@@ -1,3 +1,5 @@
 $(document).ready(function(){
-   $('.add-task').parent().prepend("<li><%= escape_javascript(render 'form')%></li>");
+  $('.add-task').parent().prepend("<%= escape_javascript(render 'form')%>");
+  $('.add-task').addClass("disabled");
 });
+

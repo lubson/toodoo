@@ -98,5 +98,10 @@ label {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
 }

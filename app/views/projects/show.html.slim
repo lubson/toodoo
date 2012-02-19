@@ -1,7 +1,8 @@
 div.task
   h3 Active tasks
-  ul
-    li = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task'
+  ul.active-tasks
+    = render @project.tasks
+  div = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task' 
 
   h4 Completed task
 

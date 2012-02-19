@@ -3,8 +3,14 @@ class TasksController < ApplicationController
   before_filter :find_project
 
   def new
-    @task = @project.tasks.create(params[:task])
+    @task = @project.tasks.build
 
+    respond_with @task
+  end
+
+  def create
+    @task = @project.tasks.create(params[:task])
+    
     respond_with @task
   end
 
