@@ -2,10 +2,9 @@
   li
     = link_to 'link', class: 'check' do
       input type="checkbox"
-    = link_to 'destroy', class: 'delete' do
+    = link_to project_task_path(@project, task), method: 'delete' , class: 'delete', remote: true do
       i.icon-trash
     = link_to 'edit', class: 'edit' do
       i.icon-edit
     time = task.due
     p = task.name
-    

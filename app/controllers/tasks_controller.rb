@@ -14,6 +14,13 @@ class TasksController < ApplicationController
     respond_with @task
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    respond_with @task
+  end
+
 private
   def find_project
     @project = Project.find(params[:project_id])
