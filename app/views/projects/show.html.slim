@@ -21,8 +21,9 @@ div.row-fluid
     label Created at
     date = @project.created_at
     ul.span12.project-actions
-      li = link_to 'Edit', edit_project_path(@project), class:'btn btn-mini'
-      li = link_to 'Postpone', edit_project_path(@project), class:'btn btn-mini'
-      li = link_to 'Complete', edit_project_path(@project), class:'btn btn-mini'
       li = link_to 'Delete', @project, method: :delete, class: 'btn btn-mini btn-danger', confirm: 'Tasks in this project will be also deleted!'
+      li = link_to 'Complete', edit_project_path(@project), class:'btn btn-mini'
+      li = link_to 'Postpone', edit_project_path(@project), class:'btn btn-mini'
+      li = link_to 'Edit', edit_project_path(@project), class:'btn btn-mini'
+      
 

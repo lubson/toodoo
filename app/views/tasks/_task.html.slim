@@ -1,10 +1,10 @@
 = div_for(task) do
   li
     = link_to project_task_check_path(@project, task), class: 'check', remote: true do
-      input type="checkbox"
+      = checked_input(task)
     = link_to project_task_path(@project, task), method: 'delete' , class: 'delete', remote: true do
       i.icon-trash
     = link_to 'edit', class: 'edit' do
       i.icon-edit
     time = task.due
-    p = task.name
+    = checked_paragraph(task)

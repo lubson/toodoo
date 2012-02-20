@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#<%= dom_id(@task) %>').toggleClass('checked');
+  $('#<%= dom_id(@task) %> p').toggleClass('checked');
   if ($('#<%= dom_id(@task) %> input[checked=checked]').length) {
     $('#<%= dom_id(@task) %> input').removeAttr('checked');
   } else {
