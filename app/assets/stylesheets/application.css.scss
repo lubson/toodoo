@@ -148,12 +148,21 @@ label {
   .check {
     float:left;
   }
+  .check{
+    margin-right: 5px;
+  }
   p {
     font-size:small;
     line-height:normal;
     padding-top:3px;
   }
   .edit,.delete {
+    padding-top:3px;
     float:right;
   }
+}
+
+.checked {
+  text-decoration: line-through;
+  
 }

@@ -1,0 +1,8 @@
+$(document).ready(function(){
+  $('#<%= dom_id(@task) %>').toggleClass('checked');
+  if ($('#<%= dom_id(@task) %> input[checked=checked]').length) {
+    $('#<%= dom_id(@task) %> input').removeAttr('checked');
+  } else {
+    $('#<%= dom_id(@task) %> input').attr('checked','checked');
+  }
+});
