@@ -3,7 +3,7 @@ div.row-fluid
   div.task.span6
     h4 Active tasks
     ul.active-tasks
-      = render @project.tasks
+      = render @project.tasks.by_status('active')
     div = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task btn btn-mini btn-primar' 
 
     h5 Completed task

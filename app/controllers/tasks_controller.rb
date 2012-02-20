@@ -14,6 +14,15 @@ class TasksController < ApplicationController
     respond_with @task
   end
 
+  def check
+    @task = Task.find(params[:task_id])
+    p @task.name
+    @task.check!
+    @task.save
+
+    respond_with @task
+  end
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy

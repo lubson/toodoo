@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   has_many   :tasks
 
   after_initialize do
-    self.status = 'active' if self.status.empty?
+    self.status = 'active' if self.status.nil?
   end
 
   scope :default, where(status: 'default').first
