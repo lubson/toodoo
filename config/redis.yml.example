@@ -1,0 +1,15 @@
+defaults: &defaults
+  host: localhost # default host
+  port: 6379      # default host
+  user: benjo
+  password: jojo
+  url: redis://localhost:6379 # if url is set other setting is ignored!
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults

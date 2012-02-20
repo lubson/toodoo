@@ -28,9 +28,12 @@ Toodoo::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Use a different cache store in production
+  config.cache_store = :redis_store
+
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
- 
+
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5

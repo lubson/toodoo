@@ -16,6 +16,9 @@
 # Ignore db settings
 /config/database.yml
 
+# Ignore redis settings
+/config/redis.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
