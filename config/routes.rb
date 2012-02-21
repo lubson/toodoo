@@ -6,6 +6,7 @@ Toodoo::Application.routes.draw do
   end
   
   get 'project/postpone/:id' => 'projects#postpone', as: 'postpone/project'
+  get 'project/complete/:id' => 'projects#complete', as: 'complete/project'
   resources :projects do
     match 'projects/*status' => 'projects#index'
     resources :tasks do

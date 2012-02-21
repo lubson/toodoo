@@ -1,0 +1,6 @@
+$(document).ready(function(){
+  $('#<%= dom_id(@task) %>').remove();
+  $('.add-task').parent().prepend("<%= escape_javascript(render 'form')%>");
+  $('.add-task').addClass("disabled");
+});
+

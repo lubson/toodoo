@@ -18,7 +18,13 @@ class Task < ActiveRecord::Base
 
 private
   def set_status_and_due
-    # here goes date decision
+    case status
+      when 'today'     then self.due = Date.today
+      when 'tomorrow'  then self.due = Date.tomorrow
+      when 'this_week' then self.due = Date.today.end_of_week
+      when 'next_week' then self.due = Date.today.next_week.end_of_week
+    end
+    
     self.status = 'active' unless status == 'complete'
   end
 end

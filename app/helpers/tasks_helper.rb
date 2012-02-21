@@ -12,7 +12,7 @@ module TasksHelper
     if task.status == 'complete'
       content_tag(:p, task.name, class: 'checked')
     else
-      content_tag(:p, task.name)
+      content_tag(:p, "#{task.due} #{task.name}")
     end
   end
 end
