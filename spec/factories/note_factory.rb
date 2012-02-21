@@ -1,3 +1,5 @@
-Factory.define :note do |note|
-  note.content 'Some random content..'
+FactoryGirl.define do
+  factory :note do
+    content 'Some random content..'
+  end
 end

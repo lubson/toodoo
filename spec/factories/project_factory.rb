@@ -1,4 +1,6 @@
-Factory.define :project do |project|
-  project.name 'Toodoo'
-  project.note 'Best solution for task managment'
+FactoryGirl.define do
+  factory :project do
+    name 'Toodoo'
+    note 'Best solution for task managment'
+  end
 end
