@@ -124,12 +124,7 @@ label {
 }
 
 .project-actions {
-  list-style-type:none;
-  float:right;
-  li {
-    float: right;
-    margin-right: 8px;
-  }
+  
 }
 
 .project-info {
@@ -161,6 +156,10 @@ label {
     padding-top:3px;
     float:right;
   }
+}
+
+.navbar .nav-collapse a {
+  margin-right: 10px
 }
 
 .checked {

@@ -26,6 +26,11 @@ module ProjectsHelper
     end
     list.first + list.second + list.third
   end
+
+  def heading_based_on(status)
+    options = { active: 'Active', postponed: 'Postponed', complete: 'Completed'}
+    "#{options[status.to_sym]} projects"
+  end
 end
 
 
