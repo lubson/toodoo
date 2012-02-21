@@ -14,7 +14,7 @@ html
           div.nav-collapse
             p.pull-right.navbar-text 
               a href='#' = current_user.email
-              = link_to  destroy_user_session_path, method: :delete, class: 'pull-right navbar-text sign-out' do
+              = link_to  destroy_user_session_path, method: :delete, class: 'pull-right navbar-text sign-out', id: 'sign-out' do
                 i.icon-off.icon-white
               
     /! SIDEBAR
