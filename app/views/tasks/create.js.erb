@@ -1,5 +1,5 @@
 $(document).ready(function(){
   $('.task-form').fadeOut();
   $('.add-task').removeClass("disabled");
-  $('.active-tasks').prepend("<%= escape_javascript(render @task) %>");
+  $('.active-tasks').append("<%= escape_javascript(render @task) %>");
 });
