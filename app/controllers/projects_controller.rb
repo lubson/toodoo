@@ -37,6 +37,14 @@ class ProjectsController < ApplicationController
     respond_with @project
   end
 
+  def postpone
+    @project = Project.find(params[:id])
+    @project.status = 'postponed'
+    @project.save
+
+    respond_with @project
+  end
+
   def destroy
     @project = Project.find(params[:id])
     @project.destroy

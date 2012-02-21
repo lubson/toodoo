@@ -5,6 +5,7 @@ Toodoo::Application.routes.draw do
     get 'users', to: 'notes#index', as: :user_root
   end
   
+  get 'project/postpone/:id' => 'projects#postpone', as: 'postpone/project'
   resources :projects do
     match 'projects/*status' => 'projects#index'
     resources :tasks do

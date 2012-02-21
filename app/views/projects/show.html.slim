@@ -1,4 +1,4 @@
-= render 'menu'
+= render 'menu', active: @project.status
 div.row-fluid
   div.task.span6
     h4 Active tasks
@@ -6,9 +6,10 @@ div.row-fluid
       = render @project.tasks.by_status('active')
     div = link_to 'Add task', new_project_task_path(@project.id), remote: true, class: 'add-task btn btn-mini btn-primar' 
 
+    
     h5 Completed task
     ul.completed-tasks
-      = render @project.tasks.by_status('completed')
+      = render @project.tasks.by_status('complete')
 
   div.project-info.span5
     h3 = @project.name
@@ -23,7 +24,7 @@ div.row-fluid
     ul.span12.project-actions
       li = link_to 'Delete', @project, method: :delete, class: 'btn btn-mini btn-danger', confirm: 'Tasks in this project will be also deleted!'
       li = link_to 'Complete', edit_project_path(@project), class:'btn btn-mini'
-      li = link_to 'Postpone', edit_project_path(@project), class:'btn btn-mini'
+      li = link_to 'Postpone', postpone_project_path(@project), class:'btn btn-mini', remote: true
       li = link_to 'Edit', edit_project_path(@project), class:'btn btn-mini'
       
 
