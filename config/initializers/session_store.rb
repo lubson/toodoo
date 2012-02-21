@@ -1,1 +1,1 @@
-Toodoo::Application.config.session_store :redis_store
+Toodoo::Application.config.session_store :cookie_store, key: '_Toodoo_session'
