@@ -4,7 +4,6 @@
       = checked_input(task)
     = link_to project_task_path(@project, task), method: 'delete' , class: 'delete', remote: true do
       i.icon-trash
-    = link_to 'edit', class: 'edit' do
+    = link_to edit_project_task_path(@project, task), class: 'edit', remote: true do
       i.icon-edit
-    time = task.due
     = checked_paragraph(task)

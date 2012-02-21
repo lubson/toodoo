@@ -24,7 +24,7 @@ div.row-fluid
     div.project-actions.btn-group
        = link_to 'Edit', edit_project_path(@project), class:'btn btn-mini'
        = link_to 'Postpone', postpone_project_path(@project), class:'btn btn-mini', remote: true
-       = link_to 'Complete', edit_project_path(@project), class:'btn btn-mini'
+       = link_to 'Complete', complete_project_path(@project), class:'btn btn-mini', remote: true,confirm: 'Tasks in this project will be also completed!'
        = link_to 'Delete', @project, method: :delete, class: 'btn btn-mini btn-danger', confirm: 'Tasks in this project will be also deleted!'
       
 

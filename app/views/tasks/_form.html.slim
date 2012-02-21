@@ -3,7 +3,7 @@
   = form.input  :name, input_html: { rows: '3' }
   = form.input  :status, default: 'today',\ 
       collection: { 'Today' => 'today', 'Tomorrow' => 'tomorrow', 'This week' => 'this_week',\
-                    'Next week' => 'next_week', 'Later' => 'later', 'Pick date' => 'pick_date' }
-  = form.input  :due, as: :string, label: false,\
+                    'Next week' => 'next_week' }
+  /= form.input  :due, as: :string, label: false,\
       input_html: { class: 'small hidden', 'data-datepicker' => 'datepicker' }
-  = form.button :submit, "Create task"
+  = form.button :submit, "Save"

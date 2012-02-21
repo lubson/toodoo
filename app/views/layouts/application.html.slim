@@ -24,10 +24,9 @@ html
           div.sidebar-nav
             ul.nav.nav-list
               li = link_to 'Inbox', notes_path
-              li Tasks
               li = link_to 'Projects', projects_path(status: 'active')
               br
-              li = link_to 'New project', new_project_path
+              = link_to 'New project', new_project_path, class: 'btn btn-small btn-inverse'
     
         div.span10
           div.hero-unit.shadow
