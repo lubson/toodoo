@@ -16,7 +16,7 @@ module Toodoo
     # config.autoload_paths += %W(#{config.root}/extras)
 
     # Activate observers that should always be running.
-    config.active_record.observers = :user_observer
+    config.active_record.observers = :user_observer, :project_observer
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
