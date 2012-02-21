@@ -11,14 +11,14 @@ class Task < ActiveRecord::Base
 
   def check!
     case status
-      when 'active'    then self.status = 'completed'
-      when 'completed' then self.status = 'active'
+      when 'active'   then self.status = 'complete'
+      when 'complete' then self.status = 'active'
     end
   end
 
 private
   def set_status_and_due
     # here goes date decision
-    self.status = 'active' unless status == 'completed'
+    self.status = 'active' unless status == 'complete'
   end
 end
