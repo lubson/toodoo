@@ -4,14 +4,14 @@ describe Task do
   describe '.recent' do
     it 'returns recent tasks' do
       tasks = create_list :task_day_before, 2
-      tasks.reverse.should eq Task.recent
+      Task.recent.should eq tasks.reverse
     end
   end
 
   describe '.by_status' do
     it 'finds a task with existing status' do
       task = create(:task, status: :active)
-      task.should be_in Task.by_status(:active)
+      Task.by_status(:active).should include task
     end
 
     it 'does not find any task with non-existing status' do
@@ -22,7 +22,7 @@ describe Task do
   describe 'initialization' do
     it 'has an active status by default' do
       task = build :task
-      task.status.should eql 'active'
+      task.status.should eq 'active'
     end
   end
 end
