@@ -18,7 +18,7 @@ module ProjectsHelper
   end
 
   def generate_projects_menu(status)
-    options = { active: 'Active', postponed: 'Postponed', complete: 'Completed'}
+    options = { active: 'Active', postponed: 'Postponed', completed: 'Completed'}
     list = []
     options.each do |attribute, value|
       html_class = status == attribute.to_s ? "span3 active" : "span3 status-#{attribute}"

@@ -37,9 +37,18 @@ class ProjectsController < ApplicationController
     respond_with @project
   end
 
+  #TODO put together with complete
   def postpone
     @project = Project.find(params[:id])
     @project.status = 'postponed'
+    @project.save
+
+    respond_with @project
+  end
+
+   def complete
+    @project = Project.find(params[:id])
+    @project.status = 'completed'
     @project.save
 
     respond_with @project
