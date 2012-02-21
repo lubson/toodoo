@@ -7,24 +7,22 @@ Feature: Sign up
     Given I am on the homepage
 
     Scenario: Signing up with valid data
-      When I fill in "signup_email" with "user@mail.com"
-      And I fill in "signup_password" with "password"
-      And I fill in "signup_password_confirmation" with "password"
+      When I fill in "Email" with "user@mail.com" in context of "sign-up"
+      And I fill in "Password" with "password" in context of "sign-up"
+      And I fill in "Password confirmation" with "password"
       And I press "Sign up"
-      Then I should see "Signed in as user@mail.com"
-      And I should see "Sign out"
-      And I should see "You have signed up successfuly. Welcome to toodoo!"
+      Then I should see "user@mail.com"
 
     Scenario: Signing up with blank input field
-      When I fill in "signup_email" with " "
-      And I fill in "signup_password" with "password"
-      And I fill in "signup_password_confirmation" with "password"
+      When I fill in "Email" with " " in context of "sign-up"
+      And I fill in "Password" with "password" in context of "sign-up"
+      And I fill in "Password confirmation" with "password" in context of "sign-up"
       And I press "Sign up"
-      Then I should see "Please fill out this field."
+      Then I should see "Sign up"
 
     Scenario: Signing up with mismatch in passwords
-      When I fill in "signup_email" with "user@mail.com"
-      And I fill in "signup_password" with "password"
-      And I fill in "signup_password_confirmation" with "drowssap"
+      When I fill in "Email" with "user@mail.com" in context of "sign-up"
+      And I fill in "Password" with "password" in context of "sign-up"
+      And I fill in "Password confirmation" with "drowssap" in context of "sign-up"
       And I press "Sign up"
       Then I should see "doesn't match confirmation"

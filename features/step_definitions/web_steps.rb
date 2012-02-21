@@ -3,6 +3,7 @@ Given /^I am on the homepage$/ do
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  field = 'note_content' if field == 'Note'
   fill_in field, with: value
 end
 
@@ -10,12 +11,12 @@ When /^I follow "([^\"]*)"$/ do |link|
   click_link  link
 end
 
-When /^I edit "([^"]*)" with "([^"]*)"$/ do |field, value|
-  pending
-end
-
 When /^I fill in "([^\"]*)" with "([^\"]*)" in context of "([^\"]*)"$/ do |field, value, context|
   find_by_id(context).fill_in field, with: value
+end
+
+When /^I sign out$/ do
+  click_link  "sign-out"
 end
 
 Then /^I press "([^\"]*)"$/ do |button|

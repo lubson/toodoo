@@ -11,7 +11,5 @@ Feature: Signing out
     And I am signed in as them
     
   Scenario: Signing out via link
-    When I follow "Sign out"
-    Then I should see "You have been signed out successfuly."
+    When I sign out
     And I should see "Sign in"
-    But I should not see "Sign out"

@@ -10,7 +10,7 @@ Given /^I am signed in as them$/ do
     When I fill in "signin_email" with "#{@user.email}"
     And I fill in "signin_password" with "toodoo"
     And I press "Sign in"
-    Then I should see "Signed in as #{@user.email}"
+    Then I should see "#{@user.email}"
   })
 end
 
