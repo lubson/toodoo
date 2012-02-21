@@ -1,14 +1,18 @@
-config = YAML::load(File.open("#{Rails.root}/config/redis.yml"))[Rails.env]
+if ENV['REDISTOGO_URL'].blank?
+  config = YAML::load(File.open("#{ Rails.root }/config/redis.yml"))[Rails.env]
 
-REDIS_STORE_URL = if config['url'].blank?
-  host     = config['host'] || 'localhost'
-  port     = config['port'] || 6379
-  user     = config['user'].presence
-  password = config['password'].presence
+  REDIS_STORE_URL = if config['url'].blank?
+    host     = config['host'] || 'localhost'
+    port     = config['port'] || 6379
+    user     = config['user'].presence
+    password = config['password'].presence
 
-  URI::Generic.build(scheme: 'redis', userinfo: [user, password], host: host, port: port).to_s
+    URI::Generic.build(scheme: 'redis', userinfo: [user, password], host: host, port: port).to_s
+  else
+    config['url']
+  end
 else
-  config['url']
+  REDIS_STORE_URL = ENV['REDISTOGO_URL']
 end
 
 uri = URI.parse(REDIS_STORE_URL)
