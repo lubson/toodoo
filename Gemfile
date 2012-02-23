@@ -31,7 +31,3 @@ end
 group :test, :development do
   gem 'rspec-rails', '2.8.1'
 end
-
-group :production do
-  gem 'thin', '1.3.1'
-end
