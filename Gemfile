@@ -8,7 +8,7 @@ gem 'simple_form',  '1.5.2'
 gem 'redis-rails',  '3.2.1'
 
 group :assets do
-  gem 'jquery-rails',   '2.0.0'
+  gem 'jquery-rails',   '1.0.19'
   gem 'sass-rails',     '3.2.4'
   gem 'coffee-rails',   '3.2.2'
   gem 'uglifier',       '1.2.3'
