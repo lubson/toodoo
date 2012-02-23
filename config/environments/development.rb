@@ -29,7 +29,7 @@ Toodoo::Application.configure do
   config.assets.debug = true
 
   # Use a different cache store in production
-  config.cache_store = :redis_store
+  # config.cache_store = :redis_store
 
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict

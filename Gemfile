@@ -5,7 +5,6 @@ gem 'pg',           '0.13.1'
 gem 'devise',       '2.0.4'
 gem 'slim',         '1.1.0'
 gem 'simple_form',  '1.5.2'
-gem 'redis-rails',  '3.2.1'
 
 group :assets do
   gem 'jquery-rails',   '1.0.19'
@@ -30,4 +29,8 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '2.8.1'
+end
+
+group :production do
+  gem 'thin', '1.3.1'
 end
